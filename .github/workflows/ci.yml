@@ -1,0 +1,13 @@
+name: SIEM Toolkit CI
+on: [push, pull_request]
+
+jobs:
+  siem:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Run parser smoke test
+      run: echo "Failed password for testuser" | python parsers/ssh_parser.py /dev/stdin || true
