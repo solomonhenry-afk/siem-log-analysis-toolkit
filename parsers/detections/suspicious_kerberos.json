@@ -1,0 +1,5 @@
+{
+  "detection": "Suspicious Kerberos Ticket Request",
+  "pattern": "AS-REQ without pre-authentication",
+  "severity": "high"
+}
